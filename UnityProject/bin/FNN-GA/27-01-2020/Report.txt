@@ -1,0 +1,1 @@
+Fecha	Nombre	Generacion	Evaluation	Fitness	position x	position y	Inputs FNN	Outputs FNN

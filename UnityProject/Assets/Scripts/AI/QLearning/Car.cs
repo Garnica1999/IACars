@@ -12,9 +12,9 @@ public class Car : MonoBehaviour
     private Sensor[] sensors;
     private Vector3 VectorPosition;
     private Quaternion InitialRotation;
-    private QLearning Learning;
-    private int GenerationCount = 0;
-    private float timeGeneration = 0f;
+    public QLearning Learning;
+    public int GenerationCount = 0;
+    public float timeGeneration = 0f;
     private bool PermitirGuardar = false;
     private bool autoChocado = false;
     private float TiempoGuardado = 0.0f;
@@ -32,18 +32,12 @@ public class Car : MonoBehaviour
         InitialRotation = transform.rotation;
         this.Instantiate();
     }
-    void Start()
-    {
-        
-        
-        
-    }
 
     void Update()
     {
         this.timeGeneration += Time.deltaTime;
         this.TiempoGuardado += Time.deltaTime;
-        if (TiempoGuardado >= 10)
+        if (TiempoGuardado >= 0.5)
         {
             this.Learning.EscribirArchivo(this.GenerationCount, this.timeGeneration);
             //PermitirGuardar = false;
@@ -126,6 +120,8 @@ public class Car : MonoBehaviour
         {
             PermitirGuardar = true;
             StartCoroutine(Die(0.7f));
+
+            this.Learning.EscribirArchivoSec(this.GenerationCount, this.timeGeneration);
             this.GenerationCount++;
             this.timeGeneration = 0f;
         }

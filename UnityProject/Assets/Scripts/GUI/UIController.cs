@@ -23,6 +23,7 @@ public class UIController : MonoBehaviour
 
     private UISimulationController simulationUI;
     private UIStartMenuController startMenuUI;
+    private Persistence persistence;
     #endregion
 
     #region Constructors
@@ -34,6 +35,7 @@ public class UIController : MonoBehaviour
         Canvas = GetComponent<Canvas>();
         simulationUI = GetComponentInChildren<UISimulationController>(true);
         startMenuUI = GetComponentInChildren<UIStartMenuController>(true);
+        persistence = Persistence.Instance;
 
         simulationUI.Show();
     }
@@ -47,6 +49,7 @@ public class UIController : MonoBehaviour
     public void SetDisplayTarget(CarController target)
     {
         simulationUI.Target = target;
+        persistence.Target = target;
     }
     #endregion
 }

@@ -77,6 +77,8 @@ public class CarController : MonoBehaviour
 
     private Sensor[] sensors;
     private float timeSinceLastCheckpoint;
+    public double[] FNNInputs;
+    public double[] FNNOutputs;
 
     public enum Directions
     {
@@ -137,6 +139,8 @@ public class CarController : MonoBehaviour
 
             double[] controlInputs = Agent.FNN.ProcessInputs(sensorOutput);
             Movement.SetInputs(controlInputs);
+            this.FNNInputs = sensorOutput;
+            this.FNNOutputs = controlInputs;
         }
 
         if (timeSinceLastCheckpoint > MAX_CHECKPOINT_DELAY)

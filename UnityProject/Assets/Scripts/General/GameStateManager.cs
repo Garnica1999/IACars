@@ -156,6 +156,7 @@ public class GameStateManager : MonoBehaviour
         this.typeIA = (int)GameStateManager.TiposIA.FNA;
         this.enablePanelTracks();
         this.LoadSpritesOnButtons();
+        
     }
     public void OnClicButtonQL()
     {

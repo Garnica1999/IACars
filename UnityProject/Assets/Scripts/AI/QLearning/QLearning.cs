@@ -15,7 +15,9 @@ public class QLearning : MonoBehaviour
 
 
     public float[] sensorOutput { get; set; }
-    private float ultimoValor = 0f;
+    public float ultimoValor = 0f;
+    private static string SEPARATOR = "\t";
+    private string directory = "QLearning";
     #endregion
 
     public void Init(){
@@ -31,6 +33,23 @@ public class QLearning : MonoBehaviour
         }
         this.a = 0.1f;
         this.y = 0.9f;
+
+        this.InitFiles();
+    }
+
+    private void InitFiles()
+    {
+        if (!Directory.Exists(directory))
+        {
+            Directory.CreateDirectory(directory);
+        }
+        string header = "Generation" + SEPARATOR +
+        "Time" + SEPARATOR +
+        "Position x" + SEPARATOR +
+        "Position y" + SEPARATOR +
+        "Reward" + SEPARATOR +
+        "Sensors" + Environment.NewLine;
+        File.AppendAllText(directory + "\\" + Car.Instance.gameObject.name + "-summary.txt", header);
     }
 
     private int Calcstate()
@@ -143,13 +162,37 @@ public class QLearning : MonoBehaviour
             matrix + Environment.NewLine +
             "\tReward: " + this.ultimoValor + Environment.NewLine +
             "_____________________________________________________" + Environment.NewLine;
-        string directory = "QLearning";
-        if (!Directory.Exists(directory))
-        {
-            Directory.CreateDirectory(directory);
-        }
+        
         File.AppendAllText(directory + "\\" + Car.Instance.gameObject.name + ".txt", data);
-        string text = GenerationCount + "\t" + timeGeneration + "\t" + this.ultimoValor + "\t" + Environment.NewLine;
+
+        string text = "";
+        text += GenerationCount + SEPARATOR +
+        Car.Instance.GetComponent<Transform>().position.x + SEPARATOR +
+        Car.Instance.GetComponent<Transform>().position.y + SEPARATOR;
+        foreach (float sensorData in this.sensorOutput)
+        {
+            text += sensorData + SEPARATOR;
+        }
+        text = Persistence.replaceCharOnString(text);
+        text += Environment.NewLine;
+        File.AppendAllText(directory + "\\" + Car.Instance.gameObject.name + "-possensors.txt", text);
+
+    }
+
+    public void EscribirArchivoSec(int GenerationCount, float timeGeneration)
+    {
+        string text = "";
+        text += GenerationCount + SEPARATOR +
+        timeGeneration + SEPARATOR +
+        Car.Instance.GetComponent<Transform>().position.x + SEPARATOR +
+        Car.Instance.GetComponent<Transform>().position.y + SEPARATOR +
+        this.ultimoValor + SEPARATOR;
+        foreach (float sensorData in this.sensorOutput)
+        {
+            text += sensorData + SEPARATOR;
+        }
+        text = Persistence.replaceCharOnString(text);
+        text += Environment.NewLine;
         File.AppendAllText(directory + "\\" + Car.Instance.gameObject.name + "-summary.txt", text);
     }
 

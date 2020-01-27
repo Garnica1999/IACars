@@ -44,7 +44,7 @@ public class Points : MonoBehaviour
         } else
         {
             points = -100f;
-            print("Choco el auto");
+            //print("Choco el auto");
         }
         return points;
     }
