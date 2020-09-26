@@ -9,10 +9,13 @@ El proposito de este software es realizar una comparacion entre los algoritmos Q
 
 ## Metodologia
 
-**Selección de los algoritmos:** En esta fase se escogieron los algoritmos a utilizar en este trabajo, a partir de los siguientes criterios: facilidad de diseño e implementación, buen manejo de recursos computacionales y aprendizaje temprano de uno o mas agentes.
-**Diseño y desarrollo de pistas y agentes:** En esta fase se diseñaron e implementaron las pistas y los agentes en Unity2D. Las pistas fueron inspiradas en entornos de conduccion competitiva en la vida real. La primera pista, *Ovalo*, es un entorno donde esta presente en mayor parte las rectas y curvas poco pronunciadas. La segunda pista, *Pista 1*, es un entorno donde esta presente multiples obstaculos, curvas mas pronunciadas y pocas rectas, entorno virutal el cual las tecnicas se les dificulta mas aprender y conducir un auto correctamente.
-**Registro de medidas del experimento:** En esta etapa se diseño el experimento y los registros que se midieron para comparar los resultados.
-**Análisis de los resultados:** Se realizó el análisis de los registros realizados y la comparación entre los algoritmos.
+* **Selección de los algoritmos:** En esta fase se escogieron los algoritmos a utilizar en este trabajo, a partir de los siguientes criterios: facilidad de diseño e implementación, buen manejo de recursos computacionales y aprendizaje temprano de uno o mas agentes.
+
+* **Diseño y desarrollo de pistas y agentes:** En esta fase se diseñaron e implementaron las pistas y los agentes en Unity2D. Las pistas fueron inspiradas en entornos de conduccion competitiva en la vida real. La primera pista, *Ovalo*, es un entorno donde esta presente en mayor parte las rectas y curvas poco pronunciadas. La segunda pista, *Pista 1*, es un entorno donde esta presente multiples obstaculos, curvas mas pronunciadas y pocas rectas, entorno virutal el cual las tecnicas se les dificulta mas aprender y conducir un auto correctamente.
+
+* **Registro de medidas del experimento:** En esta etapa se diseño el experimento y los registros que se midieron para comparar los resultados.
+
+* **Análisis de los resultados:** Se realizó el análisis de los registros realizados y la comparación entre los algoritmos.
 
 ## Algoritmos utilizados
 
