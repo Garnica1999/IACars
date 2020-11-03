@@ -40,5 +40,5 @@ Articulo: https://ieeexplore.ieee.org/document/9240296
 
 ### Como citar este trabajo
 
-C. A. Garnica, J. Carlos Barrero and M. L. Chaves, "Autonomous virtual vehicles with FNN-GA and Q-learning in a video game environment," 2020 Congreso Internacional de Innovación y Tendencias en Ingeniería (CONIITI), Bogotá, Colombia, 2020, pp. 1-6, doi: 10.1109/CONIITI51147.2020.9240296.
+[1] C. A. Garnica, J. Carlos Barrero and M. L. Chaves, "Autonomous virtual vehicles with FNN-GA and Q-learning in a video game environment," 2020 Congreso Internacional de Innovación y Tendencias en Ingeniería (CONIITI), Bogotá, Colombia, 2020, pp. 1-6, doi: 10.1109/CONIITI51147.2020.9240296.
 
